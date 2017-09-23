@@ -21,6 +21,11 @@ public class ViewScreen extends ScreenBase {
     }
 
     @Override
+    protected void back() {
+        game.setScreen(new MainScreen(game));
+    }
+
+    @Override
     public void render(float delta) {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         super.render(delta);

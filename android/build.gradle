@@ -19,7 +19,7 @@ android {
     }
     defaultConfig {
         applicationId "com.logicmaster63.scouting"
-        minSdkVersion 8
+        minSdkVersion 9
         targetSdkVersion 26
     }
 }

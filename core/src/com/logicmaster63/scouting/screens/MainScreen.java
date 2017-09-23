@@ -37,6 +37,7 @@ public class MainScreen extends ScreenBase {
                 game.setScreen(new ViewScreen(game));
             }
         });
+        viewButton.getImageCell().expand().fill();
         addActor(viewButton, 0.5f, 0.3f, 0.3f, 182f / 225);
     }
 
