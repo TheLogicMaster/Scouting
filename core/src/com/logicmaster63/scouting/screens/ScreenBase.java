@@ -17,10 +17,10 @@ public class ScreenBase implements Screen, InputProcessor {
     protected OrthographicCamera orthographicCamera;
     protected Viewport viewport;
     protected Stage stage;
-    protected Game game;
+    protected Scouting game;
     protected GDXButtonDialog exitDialog;
 
-    public ScreenBase(Game game) {
+    public ScreenBase(Scouting game) {
         this.game = game;
     }
 

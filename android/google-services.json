@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "737601378559",
+    "firebase_url": "https://scouting2832.firebaseio.com",
+    "project_id": "scouting2832",
+    "storage_bucket": "scouting2832.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737601378559:android:ac4bbdf4b50c697f",
+        "android_client_info": {
+          "package_name": "com.logicmaster63.scouting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "737601378559-ehuo0vuh33687ipeoqlvgln340f236f5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.logicmaster63.scouting",
+            "certificate_hash": "bbecd0439a21ab91bb539e0691e8eb291bbf38b3"
+          }
+        },
+        {
+          "client_id": "737601378559-733lau2onfood7a2m7jr821papujtjhs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAG4ylV5pOrr0o9r4yNcdsLDAidNIHGsTc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "737601378559-733lau2onfood7a2m7jr821papujtjhs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

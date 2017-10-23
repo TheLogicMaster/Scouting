@@ -18,8 +18,9 @@ android {
         exclude 'META-INF/robovm/ios/robovm.xml'
     }
     defaultConfig {
+        multiDexEnabled true
         applicationId "com.logicmaster63.scouting"
-        minSdkVersion 9
+        minSdkVersion 14
         targetSdkVersion 26
     }
 }

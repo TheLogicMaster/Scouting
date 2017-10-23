@@ -4,20 +4,46 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.ui.CheckBox;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
+import com.badlogic.gdx.scenes.scene2d.ui.VerticalGroup;
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+import com.logicmaster63.scouting.Scouting;
 
 public class ViewScreen extends ScreenBase {
 
-    Texture banner = new Texture("Banner.png");
 
-    public ViewScreen(Game game) {
+    public ViewScreen(Scouting game) {
         super(game);
     }
 
     @Override
     public void show() {
         super.show();
-        stage.addActor(new Image(banner));
+
+        CheckBox.CheckBoxStyle checkBoxStyle = new CheckBox.CheckBoxStyle();
+
+        Image backgroundImage = new Image(new Texture("Background.png"));
+        backgroundImage.setBounds(0, 0, viewport.getWorldWidth(), viewport.getWorldHeight());
+        stage.addActor(backgroundImage);
+
+        ImageButton backButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(new Texture("BackButton.png"))));
+        backButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                back();
+            }
+        });
+        addActor(backButton, 0.1f,0.9f, 0.09f, 1f);
+
+        VerticalGroup verticalGroup = new VerticalGroup();
+        CheckBox climbCheckBox = new CheckBox("Can Climb", checkBoxStyle);
+        verticalGroup.addActor(climbCheckBox);
+        stage.addActor(verticalGroup);
     }
 
     @Override
