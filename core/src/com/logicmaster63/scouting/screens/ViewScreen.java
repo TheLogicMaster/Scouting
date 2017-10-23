@@ -2,6 +2,7 @@ package com.logicmaster63.scouting.screens;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -25,7 +26,8 @@ public class ViewScreen extends ScreenBase {
     public void show() {
         super.show();
 
-        CheckBox.CheckBoxStyle checkBoxStyle = new CheckBox.CheckBoxStyle();
+        CheckBox.CheckBoxStyle checkBoxStyle = new CheckBox.CheckBoxStyle(new TextureRegionDrawable(new TextureRegion(new Texture("checked_box.png"))), new TextureRegionDrawable(new TextureRegion(new Texture("unchecked_box.png"))), game.getFont(), Color.BLACK);
+        checkBoxStyle.font = game.getFont();
 
         Image backgroundImage = new Image(new Texture("Background.png"));
         backgroundImage.setBounds(0, 0, viewport.getWorldWidth(), viewport.getWorldHeight());
@@ -41,7 +43,9 @@ public class ViewScreen extends ScreenBase {
         addActor(backButton, 0.1f,0.9f, 0.09f, 1f);
 
         VerticalGroup verticalGroup = new VerticalGroup();
+        verticalGroup.setBounds(viewport.getWorldWidth() / 10, viewport.getWorldHeight() / 10, viewport.getWorldWidth() / 10f * 8, viewport.getWorldHeight() / 10f * 8);
         CheckBox climbCheckBox = new CheckBox("Can Climb", checkBoxStyle);
+
         verticalGroup.addActor(climbCheckBox);
         stage.addActor(verticalGroup);
     }
