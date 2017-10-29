@@ -10,6 +10,7 @@ import de.tomgrill.gdxdialogs.core.GDXDialogs;
 import de.tomgrill.gdxdialogs.core.GDXDialogsSystem;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 public class Scouting extends Game {
 
@@ -33,11 +34,10 @@ public class Scouting extends Game {
 
 		System.err.println("Path: " + Gdx.files.getExternalStoragePath().concat("parsed.txt"));
 		try {
-			Parser.write(Gdx.files.getExternalStoragePath().concat("parsed.txt"));
+			Parser.write(Gdx.files.getExternalStoragePath().concat("parsed.txt"), Arrays.asList(new LayoutObject(LayoutObject.INPUT_METHOD.CHECK_BOX, "Can Climb"), new LayoutObject(LayoutObject.INPUT_METHOD.TEXT_FIELD, "Balls Scored")));
 			System.err.println("Parser: " + Parser.read(Gdx.files.getExternalStoragePath().concat("parsed.txt")));
 		} catch (IOException e) {
 			System.err.println("Parser: " + e);
-			Gdx.app.error("Parser", e.toString());
 		}
 
 		setScreen(new MainScreen(this));

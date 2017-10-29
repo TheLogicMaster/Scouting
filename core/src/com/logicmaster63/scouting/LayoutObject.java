@@ -1,15 +1,20 @@
 package com.logicmaster63.scouting;
 
 public class LayoutObject {
-    public enum inputMethod {
+    public enum INPUT_METHOD {
         CHECK_BOX, TEXT_FIELD
     }
 
-    public inputMethod inputmethod;
+    public INPUT_METHOD inputmethod;
     public String name;
 
-    public LayoutObject(inputMethod inputmethod, String name) {
+    public LayoutObject(INPUT_METHOD inputmethod, String name) {
         this.inputmethod = inputmethod;
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + inputmethod + ": " + name + ")";
     }
 }
