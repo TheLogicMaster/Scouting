@@ -1,9 +1,5 @@
 package com.logicmaster63.scouting;
 
-/**
- * Created by dmpri on 10/28/2017.
- */
-
 public class LayoutObject {
     public enum inputMethod {
         CHECK_BOX, TEXT_FIELD

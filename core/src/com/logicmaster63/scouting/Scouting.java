@@ -8,7 +8,8 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.logicmaster63.scouting.screens.MainScreen;
 import de.tomgrill.gdxdialogs.core.GDXDialogs;
 import de.tomgrill.gdxdialogs.core.GDXDialogsSystem;
-import de.tomgrill.gdxdialogs.core.dialogs.GDXButtonDialog;
+
+import java.io.IOException;
 
 public class Scouting extends Game {
 
@@ -29,6 +30,15 @@ public class Scouting extends Game {
 		Texture texture = new Texture(Gdx.files.internal("moonhouse64.png"), true); // true enables mipmaps
 		texture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
 		font =  new BitmapFont(Gdx.files.internal("moonhouse64.fnt"), new TextureRegion(texture), false);
+
+		System.err.println("Path: " + Gdx.files.getExternalStoragePath().concat("parsed.txt"));
+		try {
+			Parser.write(Gdx.files.getExternalStoragePath().concat("parsed.txt"));
+			System.err.println("Parser: " + Parser.read(Gdx.files.getExternalStoragePath().concat("parsed.txt")));
+		} catch (IOException e) {
+			System.err.println("Parser: " + e);
+			Gdx.app.error("Parser", e.toString());
+		}
 
 		setScreen(new MainScreen(this));
 	}

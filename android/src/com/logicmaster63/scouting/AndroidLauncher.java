@@ -50,7 +50,7 @@ public class AndroidLauncher extends AndroidApplication implements AndroidStuff,
 
 	@Override
 	public boolean isSignedIn() {
-		return apiHelper.isConnected();
+		return mAuth.getCurrentUser() != null;
 	}
 
 	@Override
